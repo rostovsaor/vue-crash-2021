@@ -1,16 +1,27 @@
 <template>
   <header>
-    <h1>Task Tracker</h1>
+    <h1>{{title}}</h1>
+    <Button text="Add Task" color="green" />
   </header>
 </template>
 
 <script>
+import Button from './Button'
   export default {
     name: 'Header',
+    props: {
+      title: {
+        type: String,
+        default: 'Nothing to see',
+      }
+    },
+    components: {
+      Button
+    }
   }
 </script>
 
-<style>
+<style scoped>
   header {
     display: flex;
     justify-content: space-between;
